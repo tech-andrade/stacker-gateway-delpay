@@ -103,7 +103,11 @@ git push -u origin contrib/<nome>
 # Abrir: https://github.com/stacker-builders/stacker-gateway/compare/main...<owner>:<repo>:contrib/<nome>
 ```
 
-O PR para o upstream só funciona se o GitHub reconhecer o repo de destino do push como fork de `stacker-builders/stacker-gateway`. Se `tech-andrade/stacker-gateway-delpay` não for um fork "oficial" (por exemplo, se foi importado), crie um fork pelo GitHub (ex.: `tech-andrade/stacker-gateway`), adicione-o como `git remote add contrib <url>` e faça o push para `contrib` em vez de `origin`.
+O GitHub reconhece `tech-andrade/stacker-gateway-delpay` como fork oficial de `stacker-builders/stacker-gateway`, então o push para `origin` basta para abrir PR no upstream.
+
+**Atenção ao repositório base dos PRs.** Como o repo é um fork, o GitHub sugere por padrão `stacker-builders/stacker-gateway` como base. Isso vale para o link "Compare & pull request", para o banner "had recent pushes" que aparece na página do upstream e para o `gh pr create` sem `--repo`.
+- Fluxos 1 e 2: o PR precisa ter como base **`tech-andrade/stacker-gateway-delpay:main`**. Com o `gh`, use `gh pr create --repo tech-andrade/stacker-gateway-delpay --base main`.
+- Fluxo 3: só aqui a base é `stacker-builders/stacker-gateway:main`. Com o `gh`, use `gh pr create --repo stacker-builders/stacker-gateway --base main --head tech-andrade:contrib/<nome>`.
 
 Depois que o fornecedor aceitar, a mudança volta para o fork naturalmente pelo fluxo 2. Se o fork já tinha a versão própria, resolva o conflito ficando com a versão do upstream e remova a customização duplicada.
 
