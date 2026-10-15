@@ -19,6 +19,7 @@ Toda mudança se encaixa em um de três fluxos. **Identifique o fluxo antes de c
 | **3. Contribuir** | "contribuir", "mandar para a comunidade", "abrir PR no stacker-gateway" | `upstream/main` | `contrib/<nome>` | `stacker-builders/stacker-gateway:main` |
 
 Regras gerais:
+- **O fork é público.** O GitHub não permite fork privado de repo público, e a decisão foi manter assim. Tudo o que for enviado para `origin` (branches, commits, histórico) fica visível para qualquer pessoa e aparece na rede de forks do upstream, mesmo depois de apagado. Nunca commite `.env`, credenciais de gateway, tokens, dados de clientes ou documentos internos.
 - Nunca commitar direto na `main`, nunca fazer rebase da `main` e nunca usar `push --force` na `main`. Tudo entra por PR.
 - Antes de começar qualquer fluxo, garantir que os remotes existem (`git remote -v`). Se faltar o `upstream`, rodar `git remote add upstream https://github.com/stacker-builders/stacker-gateway.git`.
 - Push e abertura de PR são ações externas. Confirme com o usuário antes, principalmente no fluxo 3, que publica código num repositório público de terceiros.
