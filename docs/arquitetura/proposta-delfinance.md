@@ -22,6 +22,8 @@ Por isso a recomendação é começar pelos **pontos de extensão genéricos** (
 
 Todas as mudanças abaixo são **aditivas**: os provedores atuais continuam nos seus `match`, e só o braço `default` passa a consultar uma interface.
 
+> A spec formal e o plano de implementação tarefa por tarefa estão em [docs/specs/2026-10-15-extensoes-de-provedores/](../specs/2026-10-15-extensoes-de-provedores/spec.md). A ordem definida lá é: PR 1 (bug da Versell) → PR 2 (categoria e capacidades) → PR 3 (estorno, credenciais e relatório) → PR 4 (PIX OUT).
+
 | # | Mudança | Onde | Efeito |
 |---|---|---|---|
 | 0.1 | Chave `category` na definição do provedor (`'psp'`, `'acquirer'`, `'open_finance'`…) e o frontend agrupando por ela, com a constante atual como fallback | `config/gateways.php`, `ProvidesPlatformGatewayProps`, `Platform/Financial/Index.vue` | A categoria passa a ser declarada pelo próprio provedor, inclusive por plugin. Categorias novas ganham título e cor por config |

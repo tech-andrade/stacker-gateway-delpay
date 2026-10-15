@@ -30,9 +30,11 @@ Thumbs.db
 !/docs/releases/**
 !/docs/llm/
 !/docs/llm/**
-# [delpay] documentação de arquitetura do fork
+# [delpay] documentação de arquitetura e specs do fork
 !/docs/arquitetura/
 !/docs/arquitetura/**
+!/docs/specs/
+!/docs/specs/**
 /Docs Gateways
 Docs Gateways
 /plugins
